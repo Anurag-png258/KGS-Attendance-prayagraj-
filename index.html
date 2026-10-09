@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anurag Attendance</title>
+<style>
+body {
+  background: #080b16;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+h1 { color: #60a5fa; text-align: center; }
+.card {
+  background: #121a2d;
+  padding: 18px;
+  border-radius: 15px;
+  margin: 15px 0;
+}
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin: 7px 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+input { background: #202a40; color: white; }
+</style>
+</head>
+<body>
+<h1>KGS ATTENDANCE PRAYAGRAJ</h1>
+<div class="card">
+<h3>🎓 Class Attendance</h3>
+<p>Welcome to our attendance website!</p>
+</div>
+<div class="card">
+<h3>👨‍🎓 Add Student</h3>
+<input id="name" placeholder="Anurag Rao">
+<input id="roll" placeholder="9497586">
+<button onclick="addStudent()">Add Student</button>
+<div id="list"></div>
+</div>
+<script>
+function addStudent() {
+  const name = document.getElementById('name').value.trim();
+  const roll = document.getElementById('roll').value.trim();
+  if (!name || !roll) {
+    alert('Enter student name and roll number');
+    return;
+  }
+  const item = document.createElement('p');
+  item.textContent = roll + ' - ' + name;
+  document.getElementById('list').appendChild(item);
+  document.getElementById('name').value = '';
+  document.getElementById('roll').value = '';
+}
+</script>
+</body>
+  </html>
